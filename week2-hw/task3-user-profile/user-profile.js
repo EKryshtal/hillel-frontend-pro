@@ -13,12 +13,12 @@ if (!yearOfBirth) {
 } else if (+yearOfBirth > CURRENT_YEAR) {
   userAge = "You are too young!";
   alert(
-    `Are you sure you were even born? The year of birth must be from ${MINIMUM_YEAR_OF_BIRTH} to ${CURRENT_YEAR}`
+    `Are you sure you were even born?\nThe year of birth must be from ${MINIMUM_YEAR_OF_BIRTH} to ${CURRENT_YEAR}`
   );
 } else if (+yearOfBirth < MINIMUM_YEAR_OF_BIRTH) {
   userAge = "You are too old!";
   alert(
-    `Are you typing from a sarcophagus? The year of birth must be from ${MINIMUM_YEAR_OF_BIRTH} to ${CURRENT_YEAR}`
+    `Are you typing from a sarcophagus?\nThe year of birth must be from ${MINIMUM_YEAR_OF_BIRTH} to ${CURRENT_YEAR}`
   );
 }
 
