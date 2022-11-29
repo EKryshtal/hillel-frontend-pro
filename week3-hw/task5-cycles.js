@@ -44,3 +44,25 @@ while (startNum < NUMBER_TO_CHECK) {
 }
 
 //5
+
+const SOME_NUMBER = 274598;
+const NUMBER_TO_POWER = 3;
+
+let toPower = 0;
+let result = NUMBER_TO_POWER ** toPower;
+
+while (result <= SOME_NUMBER) {
+  if (SOME_NUMBER === result) {
+    console.log(
+      `${SOME_NUMBER} is ${NUMBER_TO_POWER} in the power of ${toPower}`
+    );
+    break;
+  }
+
+  toPower++;
+  result = NUMBER_TO_POWER ** toPower;
+
+  if (result > SOME_NUMBER) {
+    console.log(`${SOME_NUMBER} is not ${NUMBER_TO_POWER} in any power`);
+  }
+}
