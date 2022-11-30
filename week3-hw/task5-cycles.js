@@ -17,7 +17,7 @@ for (let startNum = 10; startNum < 101; startNum += 10) {
 const MAX_SQUARE_NUM = 92;
 
 for (let startNum = 1; startNum < 101; startNum++) {
-  if (startNum ** 2 > maxSquareNum) {
+  if (startNum ** 2 > MAX_SQUARE_NUM) {
     break;
   }
   console.log(startNum);
