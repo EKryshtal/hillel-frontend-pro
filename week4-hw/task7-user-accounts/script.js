@@ -36,6 +36,8 @@ const formattedUsers = USERS.map(function (user) {
   return user;
 });
 
+console.log(formattedUsers);
+
 const filteredUsers = formattedUsers.filter(function (user) {
   if (user.balance > 2000) {
     return true;
@@ -46,7 +48,7 @@ const usersPhoneNumbers = filteredUsers.map(function (user) {
   return user.phone;
 });
 
-const balanceSum = formattedUsers.reduce(function (accumulator, currentValue) {
+const balanceSum = filteredUsers.reduce(function (accumulator, currentValue) {
   return Math.round((accumulator + currentValue.balance) * 100) / 100;
 }, 0);
 
