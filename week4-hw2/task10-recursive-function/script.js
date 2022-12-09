@@ -1,0 +1,14 @@
+function pow(num, degree) {
+  if (degree < 1) {
+    alert(`You can't enter ${degree}! Use only natural numbers`);
+    return;
+  }
+
+  if (degree === 1) {
+    return num;
+  }
+
+  return num * pow(num, degree - 1);
+}
+
+console.log(pow(3, 5));
