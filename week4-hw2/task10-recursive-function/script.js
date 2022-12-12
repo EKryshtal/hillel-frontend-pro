@@ -1,7 +1,6 @@
 function pow(num, degree) {
   if (degree < 1) {
-    alert(`You can't enter ${degree}! Use only natural numbers`);
-    return;
+    return alert(`You can't enter ${degree}! Use only natural numbers`);
   }
 
   if (degree === 1) {
