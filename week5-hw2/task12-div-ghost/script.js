@@ -1,10 +1,17 @@
 const textarea = document.querySelector("#text");
-const ghost = document.querySelector("#ghost");
+const container = document.querySelector("#container");
 
 textarea.addEventListener("focus", function () {
-  ghost.style.display = "block";
+  const div = document.createElement("div");
+
+  div.id = "ghost";
+  div.className = "ghost";
+
+  container.append(div);
 });
 
 textarea.addEventListener("focusout", function () {
-  ghost.style.display = "none";
+  const ghost = document.querySelector('#ghost');
+
+  ghost.remove()
 });
