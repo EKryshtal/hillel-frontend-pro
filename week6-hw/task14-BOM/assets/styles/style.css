@@ -17,15 +17,16 @@ button {
 }
 
 #loader {
+  display: none;
   width: 120px;
   height: 20px;
+  margin-top: 20px;
   background:
     linear-gradient(#000 0 0) 0/0% no-repeat #ddd;
-  animation: p1 2s infinite linear;
-  visibility: hidden;
+  animation: linear-loader 2s forwards linear;
 }
 
-@keyframes p1 {
+@keyframes linear-loader {
   100% {
     background-size: 100%
   }
