@@ -10,8 +10,63 @@
 </head>
 
 <body>
+  <div class="container">
+    <div class="img-card">
+      <img src="./assets/images/Star-Wars-Mandalorian-Helmet-For-Sale.jpg" class="helmet" alt="Helmet" />
+    </div>
+    <div class="description">
+      <h2>Star Wars The Mandalorian Premium Helmet</h2>
+      <p>
+        No one is quite sure who this well-equipped stranger is. The Mandalorian is battle-worn and tight-lipped, a
+        formidable bounty hunter in an increasingly dangerous galaxy. Fans can imagine the biggest battles and
+        missions in the Star Wars saga with premium roleplay items from Star Wars The Black Series!
+      </p>
+      <button id="btn" class="product-buy-btn" type="submit">Buy</button>
+    </div>
+  </div>
 
-  <script src="./assets/scripts/main.js"></script>
+  <div class="form-wrapper">
+    <form id="form">
+      <h1>Registration:</h1>
+      <div class="input-control">
+        <label for="username">Full name:</label>
+        <input id="username" type="text" placeholder="First or full name" required />
+        <div class="error"></div>
+      </div>
+      <div class="input-control">
+        <label for="select">Your city:</label>
+        <select id="select" required>
+          <option selected disabled>Select your city</option>
+          <option value="kiyv">Kyiv</option>
+          <option value="lviv">Lviv</option>
+          <option value="odessa">Odessa</option>
+        </select>
+        <div class="error"></div>
+      </div>
+      <div class="input-control">
+        <label for="novaposhta">Nova Poshta:</label>
+        <input id="novaposhta" type="text" placeholder="Number of post office" required />
+        <div class="error"></div>
+      </div>
+      <div class="input-control">
+        <label for="ccn">Credit Card Number:</label>
+        <input id="ccn" type="tel" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required/>
+        <div class="error"></div>
+      </div>
+      <div class="input-control">
+        <label for="items">Number items:</label>
+        <input type="number" id="items" />
+        <div class="error"></div>
+      </div>
+      <div class="input-control">
+        <label for="сomment"><textarea id="сomment">Leave an additional comment for the order</textarea></label>
+      </div>
+      <div class="error"></div>
+
+    </form>
+  </div>
+
+  <script src="./scripts/main.js"></script>
 </body>
 
 </html>
