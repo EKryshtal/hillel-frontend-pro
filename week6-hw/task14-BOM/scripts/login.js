@@ -11,7 +11,7 @@ function onSumbit(event) {
   showLoader();
 
   setTimeout(() => {
-    location = "/week6-hw/task14-BOM/my-profile-page.html";
+    location = "./my-profile-page.html";
   }, 2000);
 }
 
