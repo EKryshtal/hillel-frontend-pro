@@ -14,7 +14,7 @@
     <div class="img-card">
       <img src="./assets/images/Star-Wars-Mandalorian-Helmet-For-Sale.jpg" class="helmet" alt="Helmet" />
     </div>
-    <div class="description">
+    <div id="description" class="description">
       <h2>Star Wars The Mandalorian Premium Helmet</h2>
       <p>
         No one is quite sure who this well-equipped stranger is. The Mandalorian is battle-worn and tight-lipped, a
@@ -25,44 +25,48 @@
     </div>
   </div>
 
-  <div class="form-wrapper">
-    <form id="form">
+  <div id="form-wrapper" class="form-wrapper">
+    <form id="form" class="form">
       <h1>Registration:</h1>
-      <div class="input-control">
+      <div class="input-control required">
         <label for="username">Full name:</label>
-        <input id="username" type="text" placeholder="First or full name" required />
+        <input id="username" type="text" name="username" placeholder="Full name" />
         <div class="error"></div>
       </div>
-      <div class="input-control">
+      <div class="input-control required">
         <label for="select">Your city:</label>
-        <select id="select" required>
-          <option selected disabled>Select your city</option>
+        <select id="select" name="userCity">
+          <option value="" selected disabled>Select your city</option>
           <option value="kiyv">Kyiv</option>
           <option value="lviv">Lviv</option>
           <option value="odessa">Odessa</option>
         </select>
         <div class="error"></div>
       </div>
-      <div class="input-control">
+      <div class="input-control required">
         <label for="novaposhta">Nova Poshta:</label>
-        <input id="novaposhta" type="text" placeholder="Number of post office" required />
+        <input id="novaposhta" type="number" name="postOfficeNumber" placeholder="Number of post office" />
         <div class="error"></div>
       </div>
-      <div class="input-control">
+      <div class="input-control required">
         <label for="ccn">Credit Card Number:</label>
-        <input id="ccn" type="tel" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required/>
+        <input id="ccn" type="tel" name="ccn" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" />
         <div class="error"></div>
       </div>
-      <div class="input-control">
+      <div class="input-control required">
         <label for="items">Number items:</label>
-        <input type="number" id="items" />
+        <input type="number" name="numberOfItems" id="items" />
         <div class="error"></div>
       </div>
       <div class="input-control">
-        <label for="сomment"><textarea id="сomment">Leave an additional comment for the order</textarea></label>
+        <label for="сomment">Additional comment for the order:</label>
+        <textarea id="сomment" name="comment"></textarea>
       </div>
       <div class="error"></div>
-
+      <div class="input-control">
+        <button id="btn-secondary" type="submit">Submit</button>
+      </div>
+      <div class="error"></div>
     </form>
   </div>
 

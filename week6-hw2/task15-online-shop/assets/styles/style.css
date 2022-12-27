@@ -15,7 +15,6 @@
 }
 
 body {
-  color: white;
   font-family: 'Conv-mandalore', sans-serif;
 }
 
@@ -37,10 +36,11 @@ body {
 .description {
   width: 100%;
   height: auto;
+  padding: 0 40px;
 }
 
 h2 {
-  margin: 0 0 47px 38px;
+  margin-bottom: 47px;
   font-size: 30px;
   font-family: 'Conv_mandalore', sans-serif;
   font-weight: 400;
@@ -51,7 +51,7 @@ h2 {
 
 p {
   height: 125px;
-  margin: 0 0 0 38px;
+  margin: 0;
   font-family: 'ProximaNovaAW01-Regular', serif;
   color: #8d8d8d;
   line-height: 1.7em;
@@ -60,7 +60,8 @@ p {
   overflow: hidden;
 }
 
-.product-buy-btn {
+.product-buy-btn,
+#btn-secondary {
   width: 100%;
   max-width: 240px;
   font-size: 25px;
@@ -88,7 +89,19 @@ label {
   margin-bottom: 0 0 5px;
 }
 
-#form {
+.form-wrapper {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:rgba(255,255,255, 0.8);
+}
+
+.form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,10 +111,10 @@ label {
   padding: 50px;
   font-family: 'ProximaNovaAW01-Regular', sans-serif;
   color: #484848;
-  /* display: none; */
+  background-color: white;
 }
 
-#form h1 {
+.form h1 {
   font-family: 'ProximaNovaAW01-Regular', sans-serif;
   font-size: 25px;
   font-weight: bold;
@@ -125,22 +138,25 @@ label {
   padding: 10px;
 }
 
+.input-control.required label::after {
+  content: "*";
+  color: red;
+}
+
 .input-control input:focus {
   outline: 0;
 }
 
-.input-control.success input {
+.input-control.success input, .input-control.success select {
   border-color: #09c372;
 }
 
-.input-control.error input {
+.input-control.error input, .input-control.error select {
   border-color: #ff3860;
 }
 
-.input-control.error {
-  border-color: #ff3860;
+.input-control .error {
   font-size: 9px;
-  height: 13px;
 }
 
 #select {
