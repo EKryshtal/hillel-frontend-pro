@@ -4,6 +4,8 @@ const formWrapper = document.querySelector("#form-wrapper");
 const usernameInput = document.querySelector("#username");
 const userCityInput = document.querySelector("#select");
 const postOfficeNumberInput = document.querySelector("#novaposhta");
+const emailInput = document.querySelector("#email");
+const phoneNumberInput = document.querySelector("#phone");
 const ccnInput = document.querySelector("#ccn");
 const numberOfItemsInput = document.querySelector("#items");
 
@@ -87,12 +89,21 @@ const validateInputs = () => {
   const username = usernameInput.value.trim();
   const userCity = userCityInput.value;
   const postOfficeNumber = Number(postOfficeNumberInput.value);
+  const email = emailInput.value;
+  const phoneNumber = Number(phoneNumberInput.value);
   const ccn = ccnInput.value;
   const numberOfItems = Number(numberOfItemsInput.value);
   let isValid = true;
 
   !username
     ? setError(usernameInput, "Username is required")((isValid = false))
+    : setSuccess(usernameInput);
+
+  !username.match(/^[a-zA-z]*\s{1}[a-zA-z]*$/)
+    ? setError(
+        usernameInput,
+        "Please, enter your First and Last name"
+      )((isValid = false))
     : setSuccess(usernameInput);
 
   !userCity
