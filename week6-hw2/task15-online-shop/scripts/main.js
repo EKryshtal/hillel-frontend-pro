@@ -15,17 +15,17 @@ btn.addEventListener("click", () => {
   }
 });
 
-function showModal() {
+const showModal = () => {
   formWrapper.style.display = "flex";
-}
+};
 
-function hideModal() {
+const hideModal = () => {
   formWrapper.style.display = "none";
-}
+};
 
-function hideBuyButton() {
+const hideBuyButton = () => {
   btn.style.display = "none";
-}
+};
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -91,40 +91,28 @@ const validateInputs = () => {
   const numberOfItems = Number(numberOfItemsInput.value);
   let isValid = true;
 
-  if (!username) {
-    setError(usernameInput, "Username is required");
-    isValid = false;
-  } else {
-    setSuccess(usernameInput);
-  }
+  !username
+    ? setError(usernameInput, "Username is required")((isValid = false))
+    : setSuccess(usernameInput);
 
-  if (!userCity) {
-    setError(userCityInput, "City is required");
-    isValid = false;
-  } else {
-    setSuccess(userCityInput);
-  }
+  !userCity
+    ? setError(userCityInput, "City is required")((isValid = false))
+    : setSuccess(userCityInput);
 
-  if (postOfficeNumber <= 0) {
-    setError(postOfficeNumberInput, "Post office number is required");
-    isValid = false;
-  } else {
-    setSuccess(postOfficeNumberInput);
-  }
+  postOfficeNumber <= 0
+    ? setError(
+        postOfficeNumberInput,
+        "Post office number is required"
+      )((isValid = false))
+    : setSuccess(postOfficeNumberInput);
 
-  if (!ccn || !Number(ccn) || ccn.length < 13 || ccn.length > 16) {
-    setError(ccnInput, "Enter valid credit card number");
-    isValid = false;
-  } else {
-    setSuccess(ccnInput);
-  }
+  !ccn || !Number(ccn) || ccn.length < 13 || ccn.length > 16
+    ? setError(ccnInput, "Enter valid credit card number")((isValid = false))
+    : setSuccess(ccnInput);
 
-  if (numberOfItems <= 0) {
-    setError(numberOfItemsInput, "Count is required");
-    isValid = false;
-  } else {
-    setSuccess(numberOfItemsInput);
-  }
+  numberOfItems <= 0
+    ? setError(numberOfItemsInput, "Count is required")((isValid = false))
+    : setSuccess(numberOfItemsInput);
 
   return isValid;
 };
