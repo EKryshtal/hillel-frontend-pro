@@ -10,8 +10,67 @@
 </head>
 
 <body>
+  <div class="container">
+    <div class="img-card">
+      <img src="./assets/images/Star-Wars-Mandalorian-Helmet-For-Sale.jpg" class="helmet" alt="Helmet" />
+    </div>
+    <div id="description" class="description">
+      <h2>Star Wars The Mandalorian Premium Helmet</h2>
+      <p>
+        No one is quite sure who this well-equipped stranger is. The Mandalorian is battle-worn and tight-lipped, a
+        formidable bounty hunter in an increasingly dangerous galaxy. Fans can imagine the biggest battles and
+        missions in the Star Wars saga with premium roleplay items from Star Wars The Black Series!
+      </p>
+      <button id="btn" class="product-buy-btn" type="submit">Buy</button>
+    </div>
+  </div>
 
-  <script src="./assets/scripts/main.js"></script>
+  <div id="form-wrapper" class="form-wrapper">
+    <form id="form" class="form">
+      <h1>Registration:</h1>
+      <div class="input-control required">
+        <label for="username">Full name:</label>
+        <input id="username" type="text" name="username" placeholder="Full name" />
+        <div class="error"></div>
+      </div>
+      <div class="input-control required">
+        <label for="select">Your city:</label>
+        <select id="select" name="userCity">
+          <option value="" selected disabled>Select your city</option>
+          <option value="kiyv">Kyiv</option>
+          <option value="lviv">Lviv</option>
+          <option value="odessa">Odessa</option>
+        </select>
+        <div class="error"></div>
+      </div>
+      <div class="input-control required">
+        <label for="novaposhta">Nova Poshta:</label>
+        <input id="novaposhta" type="number" name="postOfficeNumber" placeholder="Number of post office" />
+        <div class="error"></div>
+      </div>
+      <div class="input-control required">
+        <label for="ccn">Credit Card Number:</label>
+        <input id="ccn" type="tel" name="ccn" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" />
+        <div class="error"></div>
+      </div>
+      <div class="input-control required">
+        <label for="items">Number items:</label>
+        <input type="number" name="numberOfItems" id="items" />
+        <div class="error"></div>
+      </div>
+      <div class="input-control">
+        <label for="сomment">Additional comment for the order:</label>
+        <textarea id="сomment" name="comment"></textarea>
+      </div>
+      <div class="error"></div>
+      <div class="input-control">
+        <button id="btn-secondary" type="submit">Submit</button>
+      </div>
+      <div class="error"></div>
+    </form>
+  </div>
+
+  <script src="./scripts/main.js"></script>
 </body>
 
 </html>
