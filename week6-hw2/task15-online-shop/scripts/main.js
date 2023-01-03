@@ -90,7 +90,7 @@ const validateInputs = () => {
   const userCity = userCityInput.value;
   const postOfficeNumber = Number(postOfficeNumberInput.value);
   const email = emailInput.value;
-  const phoneNumber = Number(phoneNumberInput.value);
+  const phoneNumber = phoneNumberInput.value;
   const ccn = ccnInput.value;
   const numberOfItems = Number(numberOfItemsInput.value);
   let isValid = true;
@@ -99,7 +99,7 @@ const validateInputs = () => {
     ? setError(usernameInput, "Username is required")((isValid = false))
     : setSuccess(usernameInput);
 
-  !username.match(/^[a-zA-z]*\s{1}[a-zA-z]*$/)
+  !username.match(/^[a-zA-Z]*\s{1}[a-zA-Z]*$/)
     ? setError(
         usernameInput,
         "Please, enter your First and Last name"
@@ -116,6 +116,28 @@ const validateInputs = () => {
         "Post office number is required"
       )((isValid = false))
     : setSuccess(postOfficeNumberInput);
+
+  email.length === 0
+    ? setError(emailInput, "Email is required")((isValid = false))
+    : setSuccess(postOfficeNumberInput);
+
+  !email.match(/^[a-zA-Z\._\-0-9]*@[a-zA-Z]*[\.][a-z]{2,4}$/)
+    ? setError(
+        emailInput,
+        "Please, enter correct email address"
+      )((isValid = false))
+    : setSuccess(emailInput);
+
+  !phoneNumber
+    ? setError(phoneNumberInput, "Invalid phone number")((isValid = false))
+    : setSuccess(phoneNumberInput);
+
+  !phoneNumber.match(/^\+[0-9]{12}$/)
+    ? setError(
+        phoneNumberInput,
+        "Please, match the requested format"
+      )((isValid = false))
+    : setSuccess(phoneNumberInput);
 
   !ccn || !Number(ccn) || ccn.length < 13 || ccn.length > 16
     ? setError(ccnInput, "Enter valid credit card number")((isValid = false))
