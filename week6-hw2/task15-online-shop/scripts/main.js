@@ -4,6 +4,8 @@ const formWrapper = document.querySelector("#form-wrapper");
 const usernameInput = document.querySelector("#username");
 const userCityInput = document.querySelector("#select");
 const postOfficeNumberInput = document.querySelector("#novaposhta");
+const emailInput = document.querySelector("#email");
+const phoneNumberInput = document.querySelector("#phone");
 const ccnInput = document.querySelector("#ccn");
 const numberOfItemsInput = document.querySelector("#items");
 
@@ -87,6 +89,8 @@ const validateInputs = () => {
   const username = usernameInput.value.trim();
   const userCity = userCityInput.value;
   const postOfficeNumber = Number(postOfficeNumberInput.value);
+  const email = emailInput.value;
+  const phoneNumber = phoneNumberInput.value;
   const ccn = ccnInput.value;
   const numberOfItems = Number(numberOfItemsInput.value);
   let isValid = true;
@@ -94,6 +98,13 @@ const validateInputs = () => {
   !username
     ? setError(usernameInput, "Username is required")((isValid = false))
     : setSuccess(usernameInput);
+
+  /^[a-zA-Z]*\s{1}[a-zA-Z]*$/.test(username)
+    ? setSuccess(usernameInput)
+    : setError(
+        usernameInput,
+        "Please, enter your First and Last name"
+      )((isValid = false));
 
   !userCity
     ? setError(userCityInput, "City is required")((isValid = false))
@@ -105,6 +116,28 @@ const validateInputs = () => {
         "Post office number is required"
       )((isValid = false))
     : setSuccess(postOfficeNumberInput);
+
+  email.length === 0
+    ? setError(emailInput, "Email is required")((isValid = false))
+    : setSuccess(postOfficeNumberInput);
+
+  /^[a-zA-Z\._\-0-9]*@[a-zA-Z]*[\.][a-z]{2,4}$/.test(email)
+    ? setSuccess(emailInput)
+    : setError(
+        emailInput,
+        "Please, enter correct email address"
+      )((isValid = false));
+
+  !phoneNumber
+    ? setError(phoneNumberInput, "Invalid phone number")((isValid = false))
+    : setSuccess(phoneNumberInput);
+
+  /^\+[0-9]{12}$/.test(phoneNumber)
+    ? setSuccess(phoneNumberInput)
+    : setError(
+        phoneNumberInput,
+        "Please, match the requested format"
+      )((isValid = false));
 
   !ccn || !Number(ccn) || ccn.length < 13 || ccn.length > 16
     ? setError(ccnInput, "Enter valid credit card number")((isValid = false))
