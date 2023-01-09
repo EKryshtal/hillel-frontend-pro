@@ -27,7 +27,7 @@ const Building = function (flatsMaxNumber) {
     if (flat.constructor.name !== "Flat") {
       console.log("Flat is not a flat");
     }
-    
+
     if (this.flats.length < this.flatsMaxNumber) {
       this.flats.push(flat);
     } else {
@@ -43,8 +43,10 @@ const flat1 = new Flat();
 const flat2 = new Flat();
 
 flat1.addElement(john);
+flat1.addElement(1);
 flat2.addElement(vivienne);
 
 const building = new Building(1);
 building.addFlat(flat1);
+building.addFlat(2);
 building.addFlat(flat2);
