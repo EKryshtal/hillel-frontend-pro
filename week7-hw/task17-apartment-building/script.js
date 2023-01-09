@@ -10,6 +10,11 @@ const Human = function (name, gender) {
 const Flat = function () {
   this.owners = [];
   this.addElement = (owner) => {
+    if (owner.constructor.name !== "Human") {
+      console.log("Owner is not a human");
+      return;
+    }
+
     this.owners.push(owner);
   };
 };
@@ -19,6 +24,10 @@ const Building = function (flatsMaxNumber) {
   this.flatsMaxNumber = flatsMaxNumber;
 
   this.addFlat = (flat) => {
+    if (flat.constructor.name !== "Flat") {
+      console.log("Flat is not a flat");
+    }
+    
     if (this.flats.length < this.flatsMaxNumber) {
       this.flats.push(flat);
     } else {
