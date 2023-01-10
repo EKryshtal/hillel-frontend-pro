@@ -10,7 +10,7 @@ const Human = function (name, gender) {
 const Flat = function () {
   this.owners = [];
   this.addElement = (owner) => {
-    if (owner.constructor.name !== "Human") {
+    if (owner instanceof Human) {
       console.log("Owner is not a human");
       return;
     }
@@ -24,7 +24,7 @@ const Building = function (flatsMaxNumber) {
   this.flatsMaxNumber = flatsMaxNumber;
 
   this.addFlat = (flat) => {
-    if (flat.constructor.name !== "Flat") {
+    if (flat instanceof Flat) {
       console.log("Flat is not a flat");
     }
 
