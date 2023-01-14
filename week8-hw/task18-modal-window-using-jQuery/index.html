@@ -6,10 +6,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
 
 <body>
-  <script src="./script.js"></script>
+  <button id="open-btn" class="btn btn-primary">Click
+    me</button>
+  <div id="my-modal" class="modal">
+    <div class="modal-content">
+      <header>
+        <h3 id="modal-title" class="modal-title">Modal Window</h3>
+      </header>
+      <p class="modal-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, commodi ipsum velit a
+        voluptatum, totam quod ad consequuntur voluptatibus recusandae nulla rerum ducimus voluptate natus, omnis
+        deserunt
+        dolorem. Molestias, cumque!</p>
+      <footer>
+        <button id="close-btn" class="btn btn-secondary">Close</button>
+      </footer>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="./scripts/script.js"></script>
 </body>
 
 </html>
