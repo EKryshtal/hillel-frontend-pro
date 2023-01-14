@@ -1,9 +1,13 @@
 $(document).ready(function () {
-  $("#open-btn").click(() => {
-    $("#my-modal").addClass("show")
+  const $modal = $("#my-modal");
+  const $openBtn = $("#open-btn");
+  const $closeBtn = $("#close-btn");
+  const stateSelector = 'show';
+  
+  $openBtn.click(() => {
+    $modal.addClass(stateSelector)
   });
-
-  $("#close-btn").click(() => {
-    $("#my-modal").removeClass("show");
+  $closeBtn.click(() => {
+    $modal.removeClass(stateSelector);
   });
 });
