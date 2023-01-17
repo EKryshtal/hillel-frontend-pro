@@ -39,6 +39,4 @@ function generateWeatherLink(cityId) {
   return `${WEATHER_API_URL}${cityId}&appid=${WEATHER_API_KEY}`;
 }
 
-window.onload = function () {
-  showWeather(CITY_ID);
-};
+showWeather(CITY_ID);
