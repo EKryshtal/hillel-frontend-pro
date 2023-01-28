@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.error {
+  display: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-block {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.post-comments-section {
+  text-align: center;
+}
+
+.post-comment-btn {
+  display: none;
+  margin-top: 20px;
+}
+
+.comment {
+  margin-top: 20px;
+}
