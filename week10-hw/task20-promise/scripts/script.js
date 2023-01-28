@@ -55,11 +55,7 @@ commentBtn.addEventListener("click", () => {
 });
 
 function validateResponse(response) {
-  if (response.ok) {
-    return response.json();
-  }
-
-  return Promise.reject(response);
+  return response.ok ? response.json() : Promise.reject(response);
 }
 
 function insertPost(post) {
