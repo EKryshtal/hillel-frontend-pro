@@ -1,22 +1,12 @@
-const obj = {
-  x: 10,
-  y: 20,
-  sign: "/",
-};
-
 class SuperMath {
-  constructor(object) {
-    this.object = object;
-  }
-
   allowedOperands = ["+", "-", "/", "*", "%"];
 
   check() {
-    let isAgree = confirm("Agree?");
+    let isAgree = this.requestAgree();
 
     if (!isAgree) {
-      this.input()
-      this.check()
+      this.input();
+      this.check();
       return;
     }
 
@@ -25,20 +15,38 @@ class SuperMath {
       throw new Error("Incorrect sign value");
     }
 
-    if (!Number(this.object.x) && Number(this.object.x) !== 0) {
+    if (Number.isNaN(this.object.x)) {
       alert("Incorrect x value");
       throw new Error("Incorrect x value");
     }
 
-    if (!Number(this.object.y) && Number(this.object.y) !== 0) {
+    if (
+      Number.isNaN(this.object.y) ||
+      (this.object.y === 0 && this.object.sign === "/")
+    ) {
       alert("Incorrect y value");
       throw new Error("Incorrect y value");
     }
 
-    const result = eval(
-      `${this.object.x} ${this.object.sign} ${this.object.y}`
-    );
+    let result = null;
+    switch (this.object.sign) {
+      case "+":
+        result = this.object.x + this.object.y;
+      case "-":
+        result = this.object.x - this.object.y;
+      case "/":
+        result = this.object.x / this.object.y;
+      case "*":
+        result = this.object.x * this.object.y;
+      case "%":
+        result = this.object.x % this.object.y;
+    }
+
     console.log(result);
+  }
+
+  requestAgree() {
+    return confirm("Agree?");
   }
 
   input() {
@@ -57,4 +65,5 @@ class SuperMath {
 }
 
 const superMath = new SuperMath();
+superMath.input();
 superMath.check();
