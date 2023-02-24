@@ -1,0 +1,11 @@
+.sidebar {
+  padding: 8px 20px;
+  background-color: rgb(172, 171, 171);
+}
+
+.sidebar__list {
+  list-style-type: none;
+  color: #1a85cd;
+  margin: 0;
+  padding: 0;
+}
