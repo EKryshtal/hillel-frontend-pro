@@ -1,16 +1,10 @@
 import "./App.css";
-import Header from "./components/Header/";
-import Sidebar from "./components/Sidebar";
-import Main from "./components/Main";
+import FirstPage from "./container/FirstPage";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <div className="content-wrapper">
-        <Sidebar />
-        <Main />
-      </div>
+      <FirstPage />
     </div>
   );
 }
